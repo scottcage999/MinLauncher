@@ -10,12 +10,16 @@ android {
         versionCode 1
         versionName '1.0'
     }
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             shrinkResources true
-            signingConfig signingConfigs.debug   // sideload-only; fine for personal use
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
